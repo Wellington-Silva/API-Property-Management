@@ -5,7 +5,7 @@ import java.util.Date;
 public record RegisterUserDTO(
         String name,
         String phone,
-        Date birthDate,
+        String birthDate,
         String email,
         String password
 ) { }

@@ -3,6 +3,7 @@ package com.wellsolutions.API_Property_Management.domains;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -33,7 +34,7 @@ public class Property {
     @Column(nullable = false, updatable = false)
     private LocalDateTime CreatedAt;
 
-    @CreatedDate
-    @Column(nullable = false, updatable = false)
+    @LastModifiedDate
+    @Column(nullable = false)
     private LocalDateTime UpdatedAt;
 }
