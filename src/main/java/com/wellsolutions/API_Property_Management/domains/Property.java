@@ -27,8 +27,10 @@ public class Property {
 
     private Integer value;
 
-    private String phone;
     private boolean isDisabled;
+
+    @Column(name = "user_id", nullable = false)
+    private UUID userId;
 
     @CreatedDate
     @Column(nullable = false, updatable = false)
