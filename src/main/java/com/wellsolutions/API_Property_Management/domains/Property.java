@@ -4,17 +4,19 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-@Table(name="properties")
-@Entity(name="properties")
-@EqualsAndHashCode(of = "id")
+@Entity
+@Table(name = "properties")
+@EntityListeners(AuditingEntityListener.class)
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(of = "id")
 public class Property {
 
     @Id
@@ -34,9 +36,9 @@ public class Property {
 
     @CreatedDate
     @Column(nullable = false, updatable = false)
-    private LocalDateTime CreatedAt;
+    private LocalDateTime createdAt;
 
     @LastModifiedDate
     @Column(nullable = false)
-    private LocalDateTime UpdatedAt;
+    private LocalDateTime updatedAt;
 }

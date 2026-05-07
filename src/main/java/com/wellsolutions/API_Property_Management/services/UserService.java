@@ -39,4 +39,5 @@ public class UserService {
         user.setDisabled(true);
         repository.save(user);
     }
+
 }
