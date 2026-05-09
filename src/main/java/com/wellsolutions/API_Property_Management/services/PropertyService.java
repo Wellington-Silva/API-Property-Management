@@ -20,6 +20,7 @@ public class PropertyService {
         property.setName(propertyData.getName());
         property.setDescription(propertyData.getDescription());
         property.setValue(propertyData.getValue());
+        property.setShortAddress(propertyData.getShortAddress());
         return repository.save(propertyData);
     }
 
@@ -40,6 +41,7 @@ public class PropertyService {
                       property.setName(data.name());
                       property.setDescription(data.description());
                       property.setValue(data.value());
+                      property.setShortAddress(data.shortAddress());
                       return repository.save(property);
                 })
                 .orElseThrow(() -> new RuntimeException("Property not found"));

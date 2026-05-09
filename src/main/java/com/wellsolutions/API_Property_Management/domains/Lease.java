@@ -9,33 +9,30 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-@Entity(name = "property")
-@Table(name = "properties")
+@Entity(name = "lease")
+@Table(name = "lease")
 @EntityListeners(AuditingEntityListener.class)
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
-public class Property {
+public class Lease {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    private String name;
-
-    private String description;
-
     private Integer value;
 
-    @Column(name = "shortaddress")
-    private String shortAddress;
+    @Column(nullable = false)
+    private LocalDateTime startDate;
 
-    private boolean isDisabled;
+    @Column(nullable = false)
+    private LocalDateTime endDate;
 
-    @Column(name = "user_id", nullable = false)
-    private UUID userId;
+    @Column(name = "property_id", nullable = false)
+    private UUID propertyId;
 
     @CreatedDate
     @Column(nullable = false, updatable = false)

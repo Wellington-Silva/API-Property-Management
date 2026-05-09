@@ -9,15 +9,15 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-@Entity(name = "property")
-@Table(name = "properties")
+@Entity(name = "tenant")
+@Table(name = "tenant")
 @EntityListeners(AuditingEntityListener.class)
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
-public class Property {
+public class Tenant {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -25,17 +25,15 @@ public class Property {
 
     private String name;
 
-    private String description;
+    @Column(name = "birthdate")
+    private String birthDate;
 
-    private Integer value;
+    private String document;
 
-    @Column(name = "shortaddress")
-    private String shortAddress;
+    private String phone;
 
-    private boolean isDisabled;
-
-    @Column(name = "user_id", nullable = false)
-    private UUID userId;
+    @Column(name = "property_id", nullable = false)
+    private UUID propertyId;
 
     @CreatedDate
     @Column(nullable = false, updatable = false)
@@ -44,4 +42,5 @@ public class Property {
     @LastModifiedDate
     @Column(nullable = false)
     private LocalDateTime updatedAt;
+
 }
