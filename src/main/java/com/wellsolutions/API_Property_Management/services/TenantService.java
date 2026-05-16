@@ -4,7 +4,6 @@ import com.wellsolutions.API_Property_Management.DTOs.CreateTenantDTO;
 import com.wellsolutions.API_Property_Management.DTOs.UpdateTenantDTO;
 import com.wellsolutions.API_Property_Management.domains.Tenant;
 import com.wellsolutions.API_Property_Management.repositories.TenantRepository;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;

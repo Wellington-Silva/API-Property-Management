@@ -37,6 +37,8 @@ public class Lease {
     @Column(name = "tenant_id", nullable = false)
     private UUID tenantId;
 
+    private Boolean isDisabled;
+
     @CreatedDate
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
