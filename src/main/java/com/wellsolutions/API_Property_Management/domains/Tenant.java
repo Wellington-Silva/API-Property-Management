@@ -26,7 +26,7 @@ public class Tenant {
     private String name;
 
     @Column(name = "birthdate")
-    private String birthDate;
+    private LocalDateTime birthDate;
 
     private String document;
 

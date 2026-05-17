@@ -32,6 +32,7 @@ public class Property {
     @Column(name = "shortaddress")
     private String shortAddress;
 
+    @Column(name = "isdisabled")
     private boolean isDisabled;
 
     @Column(name = "user_id", nullable = false)

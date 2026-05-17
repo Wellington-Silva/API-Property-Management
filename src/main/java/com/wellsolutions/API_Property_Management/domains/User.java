@@ -27,12 +27,13 @@ public class User {
     private String phone;
 
     @Column(name = "birthdate")
-    private String birthDate;
+    private LocalDateTime birthDate;
 
     private String email;
 
     private String password;
 
+    @Column(name = "isdisabled")
     private boolean isDisabled;
 
     @CreatedDate
