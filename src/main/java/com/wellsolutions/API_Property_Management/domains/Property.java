@@ -35,6 +35,9 @@ public class Property {
     @Column(name = "isdisabled")
     private boolean isDisabled;
 
+    @Column(name = "isRented")
+    private boolean isRented;
+
     @Column(name = "user_id", nullable = false)
     private UUID userId;
 
